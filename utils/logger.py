@@ -1,5 +1,6 @@
 import inspect
 import logging
+from pathlib import Path
 
 
 def get_logger(loglevel = logging.DEBUG):
@@ -8,7 +9,11 @@ def get_logger(loglevel = logging.DEBUG):
     
     #create logger and set level
     logger = logging.getLogger(logger_name)
-    logger.setLevel(logging.DEBUG)
+    logger.setLevel(loglevel)
+    
+    # Create logs directory if it doesn't exist
+    log_dir = Path("logs")
+    log_dir.mkdir(exist_ok=True)
     
     #create file handler
     file_handler = logging.FileHandler("logs/automation.log")
