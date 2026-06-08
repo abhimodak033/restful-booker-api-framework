@@ -22,3 +22,7 @@ logs/
 # OS files
 .DS_Store
 Thumbs.db
+
+#allure reports
+allure-results/
+allure-report/
